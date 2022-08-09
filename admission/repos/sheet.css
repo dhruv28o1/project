@@ -1,0 +1,9 @@
+span{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 80px;
+}

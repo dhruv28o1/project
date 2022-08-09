@@ -1,0 +1,15 @@
+<?php
+$id=$_SESSION['id'];
+$first_name=$_POST['firstname'];
+$last_name=$_POST['lastname'];
+$image=base64_encode(file_get_contents($_FILES['photo']["tmp_name"]));
+$dob=$_POST['dob'];
+$gender=$_POST['gender'];
+$catogery=$_POST['catogery'];
+$religion=$_POST['religion'];
+$father_name=$_POST['fathername'];
+$father_occupation=$_POST['f_occup'];
+$mother_name=$_POST['mothername'];
+$mother_occupation=$_POST['m_occup'];
+$income=$_POST['income'];
+$number=$_POST['number'];

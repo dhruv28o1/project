@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="repos/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="./repos/script.js"></script>
+</head>
+
+<body class=" d-flex justify-content-center">
+    <section class="container border m-2">
+
+
+        <form action="db_info.php" id="form" class="row m-2 g-2" method="post" enctype="multipart/form-data">
+
+            <h1 class="text-light bg-primary border d-flex justify-content-center fs-2">Basic Info</h1>
+            <!-- name -->
+
+
+            <div class="col-md-6">
+                <label for="firstname" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" pattern="[a-zA-Z]+" required>
+            </div>
+            <div class="col-md-6">
+                <label for="lastname" class="  form-label">Last Name:</label>
+                <input type="text" class="form-control" name="lastname" id="lastname" pattern="[a-zA-Z]*">
+            </div>
+            <div class="col-md-12">
+                <label for="photo" class="form-label">Profile Image:</label>
+                <input class="form-control" type="file" id="photo" name="photo">
+            </div>
+
+            <!-- identification -->
+
+            <div class="col-md-6">
+                <label for="dob" class="  form-label">Date Of Birth:</label>
+                <input type="date" class="form-control" name="dob" id="dob" required>
+            </div>
+            <div class="col-md-6">
+                <label for="gender" class="form-label">Gender:</label>
+                <div class=" col-md-12">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">male</label>
+                </div>
+                <div class="col-md-12">
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">female</label>
+                </div>
+            </div>
+
+            <!-- category -->
+
+            <div class="col-md-6">
+                <label for="catogery" class="  form-label">Catogery</label>
+                <select name="catogery" id="catogery" class="form-select" required>
+                    <option selected>Open this select menu</option>
+                    <option value="SC">Scheduled Caste (SC)</option>
+                    <option value="ST">scheduled Tribe (ST)</option>
+                    <option value="OBC">Other Backward Class (OBC)</option>
+                    <option value="GC">General Category (GC)</option>
+                </select>
+            </div>
+
+            <!-- religion -->
+
+            <div class="col-md-6">
+                <label for="religion" class="  form-label">Religion</label>
+                <select name="religion" id="religion" class="form-select" required>
+                    <option selected disabled>(Religion)</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="muslim">Musilm</option>
+                    <option value="sikh">sikh</option>
+                    <option value="buddism">Buddism</option>
+                </select>
+
+            </div>
+
+            <!-- father -->
+
+            <div class="col-md-6">
+                <label for="fathername" class="  form-label">Father's Name:</label>
+                <input type="text" class="form-control" name="fathername" id="fathername" pattern="[a-z A-Z]+" required>
+            </div>
+            <div class="col-md-6">
+                <label for="f_occup" class="  form-label">Occupation:</label>
+                <select id="f_occup" name="f_occup" class="form-select" required>
+                    <option selected disabled>(Father's Occupation)</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Employment">Employnment</option>
+                    <option value="Business">Business</option>
+
+                </select>
+            </div>
+
+            <!-- mother -->
+
+            <div class="col-md-6">
+                <label for="mothername" class="  form-label">Mother's name:</label>
+                <input type="text" class="form-control" name="mothername" id="mothername" pattern="[a-z A-Z]+" required>
+            </div>
+            <div class="col-md-6">
+                <label for="m_occup" class="  form-label">Occupation:</label>
+                <select name="m_occup" id="m_occup" class="form-select" required>
+                    <option selected disabled>(Mother's Occupation)</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Employment">Employnment</option>
+                    <option value="Business">Business</option>
+                    <option value="other">Other(House wife)</option>
+
+                </select>
+            </div>
+
+            <!-- income -->
+
+            <div class="col-md-12">
+                <label for="income" class="  form-label">Family Income:</label>
+                <select name="income" id="income" class="form-select" required>
+                    <option selected disabled>(Annually!)</option>
+                    <option>Below 100000/-</option>
+                    <option>100000-500000/-</option>
+                    <option>above 500000/-</option>
+                </select>
+            </div>
+            <!-- phone number -->
+
+            <div class="col-md-12">
+                <label for="number" class="form-label">Phone number:</label>
+                <input type="text" class="form-control" id="number" name="number" onkeydown="num_validate()"
+                    pattern="[6-9]{1}[0-9]{9}" required>
+            </div>
+            <!-- submit -->
+            <div class="col-6  text-danger">
+                <input type="checkbox" id="detail_checked" value="verified" required>
+                <label for="detail_verified">Details verified</label>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary" name="add_user" id="add_user">Next</button>
+            </div>
+        </form>
+
+    </section>
+
+</body>
+
+</html>
